@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
 const app = express();
 
-mongoose.connect('mongodb+srv://kumsuj5:8953729002@restapi.d5hd8is.mongodb.net/?retryWrites=true&w=majority');
+// mongoose.connect('mongodb+srv://kumsuj5:8953729002@restapi.d5hd8is.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://kumsuj5:8953729002@restapi.d5hd8is.mongodb.net/test?retryWrites=true&w=majority');
+
 mongoose.connection.on('error', err => {
     console.log("connection failed mongoose");
 });
