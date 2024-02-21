@@ -30,11 +30,11 @@ app.use('/server',(req,res,next)=>{
     res.status(200).send("Server is working")
 } )
 
-app.use((req, res, next) => {
-    res.status(404).json({
-        error: "bad request"
-    });
-});
+// app.use((req, res, next) => {
+//     res.status(404).json({
+//         error: "bad request"
+//     });
+// });
 app.use('/',(req,res,next)=>{
     res.status(200).send("kishan your are good qustion ? ")
 } )
