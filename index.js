@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
 const app = express();
+
 mongoose.connect('mongodb+srv://kumsuj5:8953729002@restapi.d5hd8is.mongodb.net/?retryWrites=true&w=majority');
 mongoose.connection.on('error', err => {
     console.log("connection failed mongoose");
@@ -23,6 +24,7 @@ const faculityRoute = require('./routers/faculity');
 app.use('/api/v1/user', userRoute);
 app.use('/api/v1/student', studentRoute);
 app.use('/api/v1/faculity', faculityRoute);
+
 
 app.use((req, res, next) => {
     res.status(404).json({
