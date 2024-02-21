@@ -6,7 +6,7 @@ const app = express();
 
 mongoose.connect('mongodb+srv://kumsuj5:8953729002@restapi.d5hd8is.mongodb.net/?retryWrites=true&w=majority');
 mongoose.connection.on('error', err => {
-    console.log("connection failed mongoose");
+    console.log("connection failed vks");
 });
 mongoose.connection.on('connected', () => {
     console.log("connected to mongoose");
