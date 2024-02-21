@@ -38,6 +38,9 @@ app.use('/server',(req,res,next)=>{
 app.use('/',(req,res,next)=>{
     res.status(200).send("kishan your are good qustion ? ")
 } )
+app.use('/neha', (req, res, next) => {
+    res.status(200).send("<div style='text-align: center; background-color: pink; padding: 20px;'>Neha di, you are very good at questioning?</div>");
+});
 
 app.listen(port, () => {
     console.log("Server is running on localhost " + port);
