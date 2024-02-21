@@ -11,7 +11,9 @@ const mongoURI = process.env.MONGODB_URI;
 
 const app = express();
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURI, {  useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000 });
 
 mongoose.connection.on('error', err => {
     console.log("Connection to MongoDB failed:", err);
