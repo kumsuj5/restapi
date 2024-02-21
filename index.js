@@ -35,6 +35,9 @@ app.use((req, res, next) => {
         error: "bad request"
     });
 });
+app.use('/',(req,res,next)=>{
+    res.status(200).send("kishan your are good qustion ? ")
+} )
 
 app.listen(port, () => {
     console.log("Server is running on localhost " + port);
