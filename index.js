@@ -48,16 +48,37 @@ app.use('/', (req, res, next) => {
             body {
                 font-family: 'Arial', sans-serif;
                 text-align: center;
-                background-color: #f0f0f0;
+                background-color: #fce4ec;
                 padding: 50px;
             }
             .love-symbol {
-                color: red;
-                font-size: 48px;
+                color: #e91e63;
+                font-size: 72px;
+                margin-top: 20px;
+                animation: rotateHeart 2s infinite linear;
+            }
+            @keyframes rotateHeart {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
             }
             .birthday-wish {
-                font-size: 24px;
+                font-size: 36px;
                 margin-top: 20px;
+                color: #673ab7;
+            }
+            .additional-content {
+                font-size: 18px;
+                margin-top: 20px;
+                color: #4caf50;
+            }
+            .footer {
+                margin-top: 50px;
+                font-size: 14px;
+                color: #757575;
             }
         </style>
     `;
@@ -70,8 +91,16 @@ app.use('/', (req, res, next) => {
                 ${style}
             </head>
             <body>
-                <div class="love-symbol">18</div>
-                <div class="birthday-wish">Happy Birthday, Sudha! </div>
+                <div class="love-symbol">❤️</div>
+                <div class="birthday-wish">Happy Birthday, Sudha!</div>
+                <div class="additional-content">
+                    Wishing you a day filled with love, laughter, and unforgettable moments. May this year bring you happiness, success, and all the wonderful things life has to offer.
+                </div>
+                <div class="footer">
+                    With love and warmest wishes,
+                    <br />
+                    sk
+                </div>
             </body>
         </html>
     `;
@@ -79,7 +108,6 @@ app.use('/', (req, res, next) => {
     // Send the HTML response
     res.status(200).send(htmlContent);
 });
-
 app.listen(port, () => {
     console.log("Server is running on localhost " + port);
 });
