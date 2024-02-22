@@ -18,12 +18,14 @@ app.use(bodyParser.json());
 
 const userRoute = require('./routers/user');
 const studentRoute = require('./routers/student');
+const newspostadmin = require('./routers/adminnews');
 
 const faculityRoute = require('./routers/faculity');
 
 app.use('/api/v1/user', userRoute);
 app.use('/api/v1/student', studentRoute);
 app.use('/api/v1/faculity', faculityRoute);
+app.use('/api/v1/newspostadmin', newspostadmin);
 
 
 app.use('/server',(req,res,next)=>{
