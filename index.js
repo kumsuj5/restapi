@@ -70,8 +70,8 @@ app.use('/', (req, res, next) => {
                 ${style}
             </head>
             <body>
-                <div class="love-symbol">❤️</div>
-                <div class="birthday-wish">Happy Birthday, Sudha!</div>
+                <div class="love-symbol">18</div>
+                <div class="birthday-wish">Happy Birthday, Sudha! </div>
             </body>
         </html>
     `;
