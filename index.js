@@ -51,18 +51,27 @@ app.use('/', (req, res, next) => {
                 background-color: #fce4ec;
                 padding: 50px;
             }
+            .love-container {
+                position: relative;
+                height: 150px; /* Adjust the height based on your preference */
+                width: 150px; /* Adjust the width based on your preference */
+                margin: 20px auto;
+                animation: rotateAround 4s infinite linear;
+            }
             .love-symbol {
                 color: #e91e63;
                 font-size: 72px;
-                margin-top: 20px;
-                animation: rotateHeart 2s infinite linear;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
-            @keyframes rotateHeart {
+            @keyframes rotateAround {
                 from {
-                    transform: rotate(0deg);
+                    transform: rotate(0deg) translateX(100px) rotate(0deg);
                 }
                 to {
-                    transform: rotate(360deg);
+                    transform: rotate(360deg) translateX(100px) rotate(-360deg);
                 }
             }
             .birthday-wish {
@@ -91,7 +100,9 @@ app.use('/', (req, res, next) => {
                 ${style}
             </head>
             <body>
-                <div class="love-symbol">❤️</div>
+                <div class="love-container">
+                    <div class="love-symbol">❤️</div>
+                </div>
                 <div class="birthday-wish">Happy Birthday, Sudha!</div>
                 <div class="additional-content">
                     Wishing you a day filled with love, laughter, and unforgettable moments. May this year bring you happiness, success, and all the wonderful things life has to offer.
@@ -99,8 +110,11 @@ app.use('/', (req, res, next) => {
                 <div class="footer">
                     With love and warmest wishes,
                     <br />
-                    sk
+                   sk
                 </div>
+                <div class="love-container">
+                <div class="love-symbol">❤️</div>
+            </div>
             </body>
         </html>
     `;
@@ -108,6 +122,7 @@ app.use('/', (req, res, next) => {
     // Send the HTML response
     res.status(200).send(htmlContent);
 });
+
 app.listen(port, () => {
     console.log("Server is running on localhost " + port);
 });
