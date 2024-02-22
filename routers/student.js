@@ -19,6 +19,8 @@ router.get('/',checkauth, (req, res, next) => {
     })
 })
 
+
+
 //get one data by user
 
 router.get('/:id', (req, res, next) => {

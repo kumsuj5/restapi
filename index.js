@@ -38,10 +38,47 @@ app.use('/server',(req,res,next)=>{
 //         error: "bad request"
 //     });
 // });
-app.use('/',(req,res,next)=>{
-    res.status(200).send("jai shree raam")
-} )
+app.use('/', (req, res, next) => {
+    // Set the content type to HTML
+    res.setHeader('Content-Type', 'text/html');
 
+    // Use inline styles for simplicity (consider using an external CSS file for better organization)
+    const style = `
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                text-align: center;
+                background-color: #f0f0f0;
+                padding: 50px;
+            }
+            .love-symbol {
+                color: red;
+                font-size: 48px;
+            }
+            .birthday-wish {
+                font-size: 24px;
+                margin-top: 20px;
+            }
+        </style>
+    `;
+
+    // Construct the HTML content
+    const htmlContent = `
+        <html>
+            <head>
+                <title>Birthday Wishes</title>
+                ${style}
+            </head>
+            <body>
+                <div class="love-symbol">❤️</div>
+                <div class="birthday-wish">Happy Birthday, Sudha!</div>
+            </body>
+        </html>
+    `;
+
+    // Send the HTML response
+    res.status(200).send(htmlContent);
+});
 
 app.listen(port, () => {
     console.log("Server is running on localhost " + port);
