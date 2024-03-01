@@ -39,7 +39,7 @@ app.use('/server',(req,res,next)=>{
 //     });
 // });
 app.use('/', (req, res, next) => {
-    res.status(200).send("jai shree raam");
+    res.status(200).send("hello deepak sir");
 });
 
 app.listen(port, () => {
