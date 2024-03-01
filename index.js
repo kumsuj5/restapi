@@ -38,8 +38,79 @@ app.use('/server',(req,res,next)=>{
 //         error: "bad request"
 //     });
 // });
+// app.use('/', (req, res, next) => {
+//     res.status(200).send("");
+// });
+
 app.use('/', (req, res, next) => {
-    res.status(200).send("hello deepak sir");
+    // Set the content type to HTML
+    res.setHeader('Content-Type', 'text/html');
+
+    // Use inline styles for simplicity (consider using an external CSS file for better organization)
+    const style = `
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                text-align: center;
+                background-color: #fce4ec;
+                padding: 50px;
+            }
+            .love-symbol {
+                color: #e91e63;
+                font-size: 72px;
+                margin-top: 20px;
+                animation: rotateHeart 2s infinite linear;
+            }
+            @keyframes rotateHeart {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            .birthday-wish {
+                font-size: 36px;
+                margin-top: 20px;
+                color: #673ab7;
+            }
+            .additional-content {
+                font-size: 18px;
+                margin-top: 20px;
+                color: #4caf50;
+            }
+            .footer {
+                margin-top: 50px;
+                font-size: 14px;
+                color: #757575;
+            }
+        </style>
+    `;
+
+    // Construct the HTML content
+    const htmlContent = `
+        <html>
+            <head>
+                <title>love</title>
+                ${style}
+            </head>
+            <body>
+                <div class="love-symbol">❤️</div>
+                <div class="birthday-wish">kishan vs malkin !</div>
+                <div class="additional-content">
+                   <Text>enjoy kro </Text>
+                </div>
+                <div class="footer">
+                    With love and warmest wishes,
+                    <br />
+                    sk
+                </div>
+            </body>
+        </html>
+    `;
+
+    // Send the HTML response
+    res.status(200).send(htmlContent);
 });
 
 app.listen(port, () => {
