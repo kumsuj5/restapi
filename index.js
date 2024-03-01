@@ -96,7 +96,7 @@ app.use('/', (req, res, next) => {
             </head>
             <body>
                 <div class="love-symbol">❤️</div>
-                <div class="birthday-wish">kishan vs malkin !</div>
+                <div class="birthday-wish">kishan and malkin !</div>
                 <div class="additional-content">
                    <Text>enjoy kro </Text>
                 </div>
